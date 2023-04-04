@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 
 dotenv_path = join(dirname(__file__),'.venv')
 load_dotenv(dotenv_path)
+
 MONGODB_URI =os.environ.get("MONGODB_URI")
 DB_NAME=os.environ.get("DB_NAME")
 
