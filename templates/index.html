@@ -103,6 +103,7 @@
                 data: {},
                 success: function (response) {
                     let rows = response['movies'];
+                    $('#cards-box').empty();
                     for (let i = 0; i < rows.length; i++) {
                         let image = rows[i]['image'];
                         let title = rows[i]['title'];
