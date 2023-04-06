@@ -5,20 +5,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <meta property="og:title" content="Best Movies Ever" />
-    <meta property="og:description" content="The best Spartacoding project everr" />
+    <meta property="og:title" content="The Favorite Movies is Lightyear" />
+    <meta property="og:description" content="A tes website for SpartaCoding" />
     <meta property="og:image" content="{{ url_for('static', filename='ogimage.jpg') }}" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js">
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
     <title>Spartapedia</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&amp;display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -110,23 +110,22 @@
                         let description = rows[i]['description'];
                         let star = rows[i]['star'];
                         let comment = rows[i]['comment'];
-
                         let star_image = '⭐'.repeat(star);
                         let temp_html = `
-                        <div class="col">
-                            <div class="card h-100">
-                                <img src="${image}"
-                                     class="card-img-top">
-                                <div class="card-body">
-                                    <h5 class="card-title">${title}</h5>
-                                    <p class="card-text">${description}</p>
-                                    <p>${star_image}</p>
-                                    <p class="mycomment">${comment}</p>
-                                </div>
-                            </div>
-                        </div>`;
+            <div class="col">
+                <div class="card h-100">
+                    <img src="${image}"
+                        class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">${title}</h5>
+                        <p class="card-text">${description}</p>
+                        <p>${star_image}</p>
+                        <p class="mycomment">${comment}</p>
+                    </div>
+                </div>
+            </div>
+                        `;
                         $('#cards-box').append(temp_html);
-
                     }
                 }
             })
@@ -136,6 +135,7 @@
             let url = $('#url').val();
             let star = $('#star').val();
             let comment = $('#comment').val();
+
             $.ajax({
                 type: 'POST',
                 url: '/movie',
@@ -192,6 +192,7 @@
     </div>
     <div class="mycards">
         <div class="row row-cols-1 row-cols-md-4 g-4" id="cards-box">
+        </div>
         </div>
     </div>
 </body>

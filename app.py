@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, jsonify
-from pymongo import MongoClient
 import requests
 from bs4 import BeautifulSoup
+from pymongo import MongoClient
 
 import os                          
 from os.path import join,  dirname
